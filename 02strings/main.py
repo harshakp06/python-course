@@ -8,8 +8,17 @@ str2 = "World"
 result = str1+" "+str2
 print(result)
 
-text = "I lead the division that plans and executes the production of made-to-fit clothing for men, by tailoring unit aggregation to fabric and other vendor partners. Skills: Operations Management · Vendor Management · Sales · Marketing · Supply chain"
+#text = "I lead the division that plans and executes the production of made-to-fit clothing for men, by tailoring unit aggregation to fabric and other vendor partners. Skills: Operations Management · Vendor Management · Sales · Marketing · Supply chain"
+text = """
+I hope this email finds you in good health.I would like to extend our sincerest apologies for the inconvenience caused regarding your recent order with us.
+We have reviewed the details of your order and acknowledge that initially, the products were sent out to the wrong address by mistake and sorry to hear that you did not receive any communication from our end for over a month.
+Our customer service team will be reaching out to you shortly,we had escalated this issue to the Logistics Partner, we will assure that your order will be delivered on a priority basis.
+"""
 length = len(text)
+
+text55 = "I would like to extend our apologies for your order, we had esclated this isuue to logistics partner"
+
+print("length of text55: ",len(text55))
 
 print("Length of the string:",length)
 
