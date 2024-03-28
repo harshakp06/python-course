@@ -1,16 +1,20 @@
-# inheritance
+# encapsulation
 
 
 class Car:
     def __init__(self,brand,model):
-        self.mybrand = brand
+        self.__mybrand = brand # if varailble start with __ it can't be called or not give any output outside class called encapsulation
         self.mymodel = model
+    
+    def get__brand(self):
+        return self.__mybrand + "!"
+
 
     # 2nd sol
     
     def full_name(self):
         # return self.mybrand + " "+ self.mymodel
-        return f"{self.mybrand}  {self.mymodel}"
+        return f"{self.__mybrand}  {self.mymodel}"
     
 
 
@@ -23,7 +27,7 @@ class ElectricCar(Car):
 
 my_tesla = ElectricCar("Tesla","Model S", "85kWh")
 print(my_tesla.full_name())
-print(my_tesla.mybrand)
+# print(my_tesla.__mybrand)
 print(my_tesla.mymodel)
 
 
