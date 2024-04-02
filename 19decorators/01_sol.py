@@ -5,12 +5,12 @@ Problem: Write a decorator that measures the time a function takes to execute.
 
 import time
 
-def timer(func):
+def timer(func1):
     def wrapper(*args,**kwargs):
         start = time.time()
-        result=func(*args,**kwargs)
+        result=func1(*args,**kwargs)
         end = time.time()
-        print(f"{func.__name__} ran in {end-start} time")
+        print(f"{func1.__name__} ran in {end-start} time")
         return result
     return wrapper
 
