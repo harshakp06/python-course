@@ -3,7 +3,11 @@ import json
 def load_data():
     try:
         with open("youtube.txt","r") as file:
-            return json.load(file)
+            test= json.load(file)
+            # print(test)
+            # print(type(test))
+            return test
+        
     except FileNotFoundError:
         return []
 
@@ -15,8 +19,13 @@ def save_data_helper(videos):
 
 
 def list_all_videos(videos):
-    for index, video in enumerate(videos, start=1):
-        print(f"{index}")
+    print("\n")
+    print("*"*50)
+    for index, vid in enumerate(videos, start=1): # enumerate is used to get index and loop on the list
+        print(f'{index} {vid["name"]}, Duration: {vid["time"]} ')
+
+    print("\n")
+    print("*"*70)
 
 def add_video(videos):
     name = input("Enter video name: ")
@@ -25,10 +34,23 @@ def add_video(videos):
     save_data_helper(videos)
 
 def update_video(videos):
-    pass
+    list_all_videos(videos)
+    index = int(input("Enter index to be updated"))
+    if 1<= index <= len(videos):
+        name = input("Enter the new name to be updated ")
+        time = input("Enter the new time to be updated ")
+        videos[index-1]={'name':name,'time':time}
+        save_data_helper(videos)
+
+
 
 def delete_video(videos):
-    pass
+    list_all_videos(videos)
+    index = int(input("Enter the video number to be deleted"))
+
+    if 1<= index <= len(videos):
+        del videos[index-1]
+        save_data_helper(videos)
 
 def main():
     videos = load_data()
@@ -38,10 +60,10 @@ def main():
         print("1. List a favourite vidoes ")
         print("2. Add a youtube video")
         print("3. Update a youtube video details")
-        print("4. Delete a yourube video")
+        print("4. Delete a youtube video")
         print("5. Exit the app")
-        choice = input("Enter your choice")
-        print(videos)
+        choice = input("Enter your choice: ")
+        # print(videos)
 
         match choice:
             case '1':
@@ -63,4 +85,4 @@ def main():
 if __name__== "__main__":
     main()
 
-#sample 
+
